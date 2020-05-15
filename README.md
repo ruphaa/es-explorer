@@ -5,4 +5,4 @@ This project is inspired from [Sarah Drasner's](https://github.com/sdras) Array 
 
 I will share a snapshot of the app's progress below.
 
-![](prod-image.png)
+![](prod.png)
