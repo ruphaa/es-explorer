@@ -1,0 +1,18 @@
+.selected-list {
+  width: 50%;
+}
+
+.main {
+  display: flex;
+}
+
+.main .title {
+  margin-right: 2rem;
+  align-self: center;
+  font-size: 1.4rem;
+  width: 15rem;
+}
+
+.sub {
+  margin-top: 3rem;
+}

@@ -38,3 +38,14 @@ header {
 .top-left {
   flex: 1;
 }
+
+.feature-selection {
+  margin-top: 5rem;
+}
+
+.feature-description {
+  margin-top: 3.5rem;
+  height: 30rem;
+  width: 40rem;
+  border: 3px solid #000;
+}
