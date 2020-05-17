@@ -4,19 +4,26 @@ import "./index.css";
 import { EcmaContext } from "../RootContext";
 
 const Version = () => {
-  const { version } = useContext(EcmaContext);
+  const { version, setVersion } = useContext(EcmaContext);
   const [category, setCategory] = useState(null);
   const [feature, setFeature] = useState(null);
 
   const changeCategory = (category) => {
     setCategory(category);
+    setFeature(null);
+    if (!category.choices) {
+      setVersion({ ...version, selectedMethod: category });
+    } else {
+      setVersion({ ...version, selectedMethod: null });
+    }
   };
   const changeFeature = (feature) => {
     setFeature(feature);
+    setVersion({ ...version, selectedMethod: feature });
   };
 
   useEffect(() => {
-    if (!version.methods.length) {
+    if (!version.type.methods.length) {
       setCategory(null);
       setFeature(null);
     }
@@ -26,18 +33,18 @@ const Version = () => {
     <div className="selected-list">
       <div className="main">
         <div className="title">Select a category</div>
-        {version && version.methods && version.methods.length ? (
+        {version.type && version.type.methods && version.type.methods.length ? (
           <Select
             value={category}
             onChange={changeCategory}
-            options={version.methods}
+            options={version.type.methods}
             className="select-control"
           />
         ) : (
           "Nothing Yet"
         )}
       </div>
-      {category && category.choices.length ? (
+      {category && category.choices && category.choices.length ? (
         <div className="main sub">
           <div className="title">Select a functionality</div>
           <Select
