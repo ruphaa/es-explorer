@@ -148,3 +148,62 @@ header {
 .feature-description .link a:hover:after {
   width: 11rem;
 }
+
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 8px;
+  }
+  .state {
+    height: 22rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 9px;
+  }
+  .App {
+    padding: 0;
+    overflow-x: hidden;
+    height: 100vh;
+  }
+  .top {
+    flex-direction: column;
+    padding: 2rem 4rem 0 4rem;
+  }
+
+  .content {
+    flex-direction: column;
+    padding: 0 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .content .feature-description {
+    width: auto;
+  }
+
+  .content .right {
+    width: auto;
+    margin-left: 0;
+  }
+
+  .content .right .code {
+    flex-direction: column;
+  }
+
+  .top-left .sub-heading {
+    font-size: calc(1.2vw + 1rem);
+  }
+
+  .feature-selection {
+    margin-top: 4rem;
+  }
+  .feature-selection .selected-list .main {
+    flex-direction: column;
+  }
+  .main .title {
+    align-self: end !important;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+}
