@@ -4,6 +4,8 @@ import Version from "./components/Version";
 import FeatureNestedSelection from "./components/FeatureNestedSelect";
 import { EcmaContext } from "./components/RootContext";
 import { esFeatures } from "./components/data";
+import Prism from "prismjs";
+import "./prism.css";
 
 function App() {
   const jsFeatures = esFeatures;
@@ -24,12 +26,26 @@ function App() {
     });
   };
 
+  const highlightHTML = (str) => {
+    return Prism.highlight(str, Prism.languages.javascript, "javscript");
+  };
+
   return (
     <EcmaContext.Provider value={{ version, setVersion }}>
       <div className="App">
         <div className="top">
           <div className="top-left">
             <header>ES Explorer</header>
+            {/* <pre class="">
+              <code class="">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: HTML,
+                  }}
+                />
+              </code>
+            </pre> */}
+
             <div className="sub-heading">
               Explore the JS features for your favorite ES Version
             </div>
@@ -66,12 +82,15 @@ function App() {
             {version.selectedMethod && version.selectedMethod.input ? (
               <div className="code">
                 <div className="title">Usage:</div>
-                <div
-                  className="state input-state"
-                  dangerouslySetInnerHTML={{
-                    __html: version.selectedMethod.input,
-                  }}
-                />
+                <pre>
+                  <code>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: highlightHTML(version.selectedMethod.input),
+                      }}
+                    />
+                  </code>
+                </pre>
               </div>
             ) : (
               ""
@@ -79,12 +98,15 @@ function App() {
             {version.selectedMethod && version.selectedMethod.output ? (
               <div className="code mt-5">
                 <div className="title">Output:</div>
-                <div
-                  className="state output-state"
-                  dangerouslySetInnerHTML={{
-                    __html: version.selectedMethod.output,
-                  }}
-                ></div>
+                <pre>
+                  <code>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: highlightHTML(version.selectedMethod.output),
+                      }}
+                    ></div>
+                  </code>
+                </pre>
               </div>
             ) : (
               ""
