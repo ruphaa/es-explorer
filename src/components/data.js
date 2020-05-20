@@ -619,9 +619,42 @@ console.log(name)`,
       },
     ],
   },
-  // ES7: {
-  //   methods: [],
-  // },
+  ES7: {
+    methods: [
+      {
+        label: "Operators",
+        value: "Operators",
+        choices: [
+          {
+            label: "Exponentiation",
+            value: "Exponentiation",
+            desc:
+              "This operator raises the first operand to the power second operand.",
+            link:
+              "https://www.freecodecamp.org/news/ecmascript-2016-es7-features-86903c5cab70/",
+            input: `console.log(4**2)`,
+            output: `16     // 4 to the power of 2 ==> 16`,
+          },
+        ],
+      },
+      {
+        label: "Array",
+        value: "Array",
+        choices: [
+          {
+            label: "Array.includes()",
+            value: "Array.includes()",
+            desc:
+              "This function returns true if an array includes value, if not returns false.",
+            link: "https://webapplog.com/es7-es8/",
+            input: `const pets = ["cat", "dog", "sheep", "pony"]
+console.log(pets.includes("cat"))`,
+            output: `cat    // Yaay! I found my cat`,
+          },
+        ],
+      },
+    ],
+  },
   // ES8: {},
   // ES9: {},
   // ES10: {},
