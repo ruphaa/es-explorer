@@ -655,7 +655,157 @@ console.log(pets.includes("cat"))`,
       },
     ],
   },
-  // ES8: {},
+  ES8: {
+    methods: [
+      {
+        label: "String Padding",
+        value: "String Padding",
+        choices: [
+          {
+            label: "padStart()",
+            value: "padStart()",
+            desc:
+              "This string handling function is used to pad the given string in the beginning. It accepts two parameters, first one is the length which represents the resultant length of the string, second parameter - Character to pad in the beginning",
+            link:
+              "https://www.freecodecamp.org/news/es8-the-new-features-of-javascript-7506210a1a22/",
+            input: `const hero = 'Hero';
+console.log(hero.padStart(10, '😎'))`,
+            output: "😎😎😎hero",
+          },
+          {
+            label: "padEnd()",
+            value: "padEnd()",
+            link:
+              "https://medium.com/better-programming/javascript-es2017-features-with-examples-877f8406e770",
+            desc:
+              "This string handling function is used to pad the given string in the end. It accepts two parameters, first one is the length which represents the resultant length of the string, second parameter - Character to pad in the end",
+            input: `const hero = 'Hero';
+console.log(hero.padEnd(10, '😎'))`,
+            output: "hero😎😎😎",
+          },
+        ],
+      },
+      {
+        label: "Object",
+        value: "Object",
+        choices: [
+          {
+            label: "Object.values()",
+            value: "Object.values()",
+            desc:
+              "Object.values() takes an object and returns an array of values in the object",
+            link:
+              "https://www.freecodecamp.org/news/es8-the-new-features-of-javascript-7506210a1a22/",
+            input: `const emojis = {laugh:' 😂', cry: '😭', think:' 🤔'}
+console.log(Object.values(emojis))`,
+            output: "[' 😂', '😭', '🤔']",
+          },
+          {
+            label: "Object.entries()",
+            value: "Object.entries()",
+            desc:
+              "Object.entries() takes an object as input and returns an array with array key-value pairs.",
+            link:
+              "https://www.freecodecamp.org/news/es8-the-new-features-of-javascript-7506210a1a22/",
+            input: `const emojis = {laugh:'😂', cry: '😭', think:'🤔'}
+console.log(Object.values(emojis))`,
+            output: "[['laugh', '😂'], ['cry', '😭'], ['think', '🤔']]",
+          },
+          {
+            label: "Object.getOwnPropertyDescriptors()",
+            value: "Object.getOwnPropertyDescriptors()",
+            desc: `It returns all own property descriptors of a given object. Descriptors are 
+                  value(value associated with the property), 
+                  writable(true if the value can be changed),
+                  get(getter for the property),
+                  set(setter for the property),
+                  configurable(true if the type of the property descriptor can be changed),
+                  and enumerable(true if this property shows up during enumeration of the property).`,
+            link:
+              "https://medium.com/better-programming/javascript-es2017-features-with-examples-877f8406e770",
+            input: `const fruits = Object.defineProperties({}, {
+  'apple': {
+    value: '🍎',
+    writable: true,
+    configurable: true,
+    enumerable: true,
+  }
+})
+console.log(Object.getOwnPropertyDescriptors(fruits))`,
+            output: `{
+  apple: {
+    configurable: true,
+    enumerable: true,
+    value: '🍎',
+    writable: true
+  }
+}`,
+          },
+        ],
+      },
+      {
+        label: "Trailing Commas",
+        value: "Trailing Commas",
+        desc:
+          "This is a syntax change. It allows us to write a valid function declaration with comma in the end of a parameter list.",
+        link: "https://github.com/tc39/proposal-trailing-function-commas",
+        input: `const showTrailingCommas = (x, y,) => {
+  // do whatever you want
+}
+
+showTrailingCommas('hello', 'world',)`,
+        output: ``,
+      },
+      {
+        label: "Async functions",
+        value: "Async functions",
+        choices: [
+          {
+            label: "Async-await",
+            value: "Async-await",
+            desc:
+              "Async functions are a combination of promises and generators to reduce the boilerplate around promises, and the “don’t break the chain” limitation of chaining promises",
+            link: "https://flaviocopes.com/javascript-async-await/",
+            input: `function doSomethingAsync() {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve('I did something'), 3000)
+    })
+}
+async function doSomething() {
+    console.log(await doSomethingAsync())
+}
+console.log('Before')
+doSomething()
+console.log('After')
+`,
+            output: `Before
+After
+I did something //after 3s`,
+          },
+        ],
+      },
+      {
+        label: "Shared memory and atomics",
+        value: "Shared memory and atomics",
+        choices: [
+          {
+            label: "SharedArrayBuffer and atomics",
+            value: "SharedArrayBuffer and atomics",
+            desc:
+              "Shared memory and atomics or Shared Array Buffers serve as a low-level building block for top-level concurrency abstractions. They enable developers to share the bytes of SharedArrayBuffer object between several workers and the core thread",
+            link: "https://2ality.com/2017/01/shared-array-buffer.html",
+            input: `Shared memory: we can allow multiple threads read and 
+write the same data with the new SharedArrayBuffer constructor.
+
+Atomics: We can use the Atomics object to make sure nothing that is being written or 
+read will be interrupted in the middle of the process.
+So the operations are finished before a the next one starts.`,
+            output: "",
+          },
+        ],
+      },
+    ],
+  },
   // ES9: {},
   // ES10: {},
   // ES11: {},
