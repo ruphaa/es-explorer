@@ -806,7 +806,123 @@ So the operations are finished before a the next one starts.`,
       },
     ],
   },
-  // ES9: {},
-  // ES10: {},
+  ES9: {
+    methods: [
+      {
+        label: "Rest/Spread Properties",
+        value: "Rest/Spread Properties",
+        choices: [
+          {
+            label: "Rest",
+            value: "Rest",
+            desc:
+              "Rest operator collects all the remaining parameters passed to a function into one single array",
+            link:
+              "https://dmitripavlutin.com/object-rest-spread-properties-javascript/",
+            input: `const numbers = [1, 2, 3, 4, 5]
+[first, second, ...others] = numbers
+console.log(others)
+
+const { first, second, ...others } = { first: 1, second: 2, third: 3, fourth: 4, fifth: 5 }
+console.log(first)
+console.log(second)
+console.log(others)`,
+            output: `[3,4,5]
+            
+1
+2
+{ third: 3, fourth: 4, fifth: 5 }`,
+          },
+          {
+            label: "Spread",
+            value: "Spread",
+            desc:
+              "Spread operator spreads a given list into individual items. ES2018 introduces the same but for objects",
+            link: "https://2ality.com/2016/10/rest-spread-properties.html",
+            input: `const numbers = [1, 2, 3, 4, 5]
+const sum = (a, b, c, d, e) => a + b + c + d + e
+const sumOfNumbers = sum(...numbers)
+console.log(sum);
+
+const items = { first, second, ...others }
+console.log(items)`,
+            output: `15
+
+{ first: 1, second: 2, third: 3, fourth: 4, fifth: 5 }`,
+          },
+        ],
+      },
+      {
+        label: "Asynchronous iteration",
+        desc:
+          "The new construct for-await-of allows you to use an async iterable object as the loop iteration. Since this uses await, you can use it only inside async functions, like a normal await",
+        link: "https://flaviocopes.com/es2018/#restspread-properties",
+        input: `for await (const line of readLines(filePath)) {
+  console.log(line)
+}`,
+        output: ``,
+      },
+      {
+        label: "Promise.prototype.finally()",
+        desc: `When a promise is fulfilled, successfully it calls the then() methods, one after another.
+
+If something fails during this, the then() methods are jumped and the catch() method is executed.
+
+finally() allow you to run some code regardless of the successful or not successful execution of the promise`,
+        link: "https://flaviocopes.com/es2018/",
+        input: `fetch('file.json')
+  .then(data => data.json())
+  .catch(error => console.error(error))
+  .finally(() => console.log('finished'))`,
+      },
+      {
+        label: "Regex Improvements",
+        choices: [
+          {
+            label: "Lookbehind assertions",
+            desc:
+              "Match a string depending on what precedes it. Lookbehinds, a new feature, uses ?<=.",
+            link: "https://flaviocopes.com/es2018/",
+            input: `/(?<=Roger) Waters/
+
+/(?<=Roger) Waters/.test('Pink Waters is my dog') //false
+/(?<=Roger) Waters/.test('Roger is my dog and Roger Waters is a famous musician') //true
+
+/(?<!Roger) Waters/
+
+/(?<!Roger) Waters/.test('Pink Waters is my dog') //true
+/(?<!Roger) Waters/.test('Roger is my dog and Roger Waters is a famous musician') //false`,
+          },
+        ],
+      },
+    ],
+  },
+  ES10: {
+    methods: [
+      {
+        label: "Array",
+        choices: [],
+      },
+      {
+        label: "Object",
+        choices: [],
+      },
+      {
+        label: "String",
+        choices: [],
+      },
+      {
+        label: "Function",
+        choices: [],
+      },
+      {
+        label: "Data types",
+        choices: [],
+      },
+      {
+        label: "Optional catch binding",
+      },
+    ],
+  },
   // ES11: {},
 };
