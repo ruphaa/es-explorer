@@ -69,7 +69,11 @@ function App() {
                 <div className="title">{version.selectedMethod.label}</div>
                 <div className="desc">{version.selectedMethod.desc}</div>
                 <div className="link">
-                  <a target="_blank" href={version.selectedMethod.link}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={version.selectedMethod.link}
+                  >
                     Further Reading
                   </a>
                 </div>

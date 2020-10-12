@@ -897,32 +897,32 @@ finally() allow you to run some code regardless of the successful or not success
       },
     ],
   },
-  ES10: {
-    methods: [
-      {
-        label: "Array",
-        choices: [],
-      },
-      {
-        label: "Object",
-        choices: [],
-      },
-      {
-        label: "String",
-        choices: [],
-      },
-      {
-        label: "Function",
-        choices: [],
-      },
-      {
-        label: "Data types",
-        choices: [],
-      },
-      {
-        label: "Optional catch binding",
-      },
-    ],
-  },
+  // ES10: {
+  //   methods: [
+  //     {
+  //       label: "Array",
+  //       choices: [],
+  //     },
+  //     {
+  //       label: "Object",
+  //       choices: [],
+  //     },
+  //     {
+  //       label: "String",
+  //       choices: [],
+  //     },
+  //     {
+  //       label: "Function",
+  //       choices: [],
+  //     },
+  //     {
+  //       label: "Data types",
+  //       choices: [],
+  //     },
+  //     {
+  //       label: "Optional catch binding",
+  //     },
+  //   ],
+  // },
   // ES11: {},
 };

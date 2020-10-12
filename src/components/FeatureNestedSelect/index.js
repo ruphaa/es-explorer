@@ -27,7 +27,7 @@ const Version = () => {
       setCategory(null);
       setFeature(null);
     }
-  });
+  }, version.type.methods.length);
 
   return (
     <div className="selected-list">
