@@ -897,32 +897,127 @@ finally() allow you to run some code regardless of the successful or not success
       },
     ],
   },
-  // ES10: {
-  //   methods: [
-  //     {
-  //       label: "Array",
-  //       choices: [],
-  //     },
-  //     {
-  //       label: "Object",
-  //       choices: [],
-  //     },
-  //     {
-  //       label: "String",
-  //       choices: [],
-  //     },
-  //     {
-  //       label: "Function",
-  //       choices: [],
-  //     },
-  //     {
-  //       label: "Data types",
-  //       choices: [],
-  //     },
-  //     {
-  //       label: "Optional catch binding",
-  //     },
-  //   ],
-  // },
+  ES10: {
+    methods: [
+      {
+        label: "Array",
+        choices: [
+          {
+            label: "Flat()",
+            desc:
+              "The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.",
+            link:
+              "https://medium.com/@selvaganesh93/javascript-whats-new-in-ecmascript-2019-es2019-es10-35210c6e7f4b",
+            input: `console.log(['Dog', ['Sheep', ['Wolf']]].flat());
+console.log(['Dog', ['Sheep', ['Wolf']]].flat(2));
+console.log(['Dog', ['Sheep', ['Wolf']]].flat(Infinity));`,
+            output: `[ 'Dog', 'Sheep', [ 'Wolf' ] ]
+[ 'Dog', 'Sheep', 'Wolf' ]
+[ 'Dog', 'Sheep', 'Wolf' ]`,
+          },
+          {
+            label: "flatMap()",
+            desc:
+              "The flatMap() method first maps each element using a mapping function, then flattens the result into a new array.",
+            link: "https://flaviocopes.com/es2019/",
+            input: `['My dog', 'is awesome'].flatMap(words => words.split(' '))`,
+            output: `[ 'My', 'dog', 'is', 'awesome' ]`,
+          },
+        ],
+      },
+      {
+        label: "Object",
+        choices: [
+          {
+            label: "Object.fromEntries()",
+            desc:
+              "The Object.fromEntries() method transforms a list of key-value pairs into an object.",
+            link: "https://www.digitalocean.com/community/tutorials/js-es2019",
+            input: `const person = { name: 'Fred', age: 87 }
+const entries = Object.entries(person)
+const newPerson = Object.fromEntries(entries)
+
+person !== newPerson //true
+console.log(entries);
+console.log(newPerson);`,
+            output: `[["name", "Fred"], ["age", 87]]
+{name: "Fred", age: 87}`,
+          },
+        ],
+      },
+      {
+        label: "String",
+        choices: [
+          {
+            label: "trimStart()",
+            desc:
+              "Return a new string with removed white space from the start of the original string.",
+            link:
+              "https://www.freecodecamp.org/news/whats-new-in-javascript-es2019-8af4390d8494/",
+            input: `' Testing'.trimStart()
+' Testing '.trimStart()`,
+            output: `'Testing'
+'Testing '`,
+          },
+          {
+            label: "trimEnd()",
+            desc:
+              "Return a new string with removed white space from the end of the original string",
+            link: "https://www.digitalocean.com/community/tutorials/js-es2019",
+            input: `' Testing'.trimEnd()
+' Testing '.trimEnd()`,
+            output: `' Testing'
+' Testing'`,
+          },
+        ],
+      },
+      {
+        label: "Function",
+        choices: [
+          {
+            label: "Function.prototype.toString()",
+            desc:
+              "The toString() method returns a string representing the source code of the function.Earlier white spaces,new lines and comments will be removed when you do now they are retained with original source code",
+            link:
+              "https://medium.com/@selvaganesh93/javascript-whats-new-in-ecmascript-2019-es2019-es10-35210c6e7f4b",
+            input: `function /* this is bar */ bar () {}
+bar.toString();`,
+            output: `function /* this is bar */ bar () {}`,
+          },
+        ],
+      },
+      {
+        label: "Optional catch binding",
+        desc:
+          "Optional catch binding allows developers to use try/catch without the error parameter inside the catch block.",
+        link: "https://www.digitalocean.com/community/tutorials/js-es2019",
+        input: `try  {
+  // some code
+}
+catch {
+  // error handling code
+}`,
+        output: ``,
+      },
+      {
+        label: "Symbol.description",
+        desc:
+          "The read-only description property is a string returning the optional description of Symbol objects.",
+        link: "https://www.digitalocean.com/community/tutorials/js-es2019",
+        input: `let mySymbol = 'My Symbol';
+
+let symObj = Symbol(mySymbol);
+
+console.log(symObj)
+
+console.log(String(symObj) === 'Symbol(mySymbol)');
+
+console.log(symObj.description);`,
+        output: `Symbol(mySymbol)
+true
+"My Symbol"`,
+      },
+    ],
+  },
   // ES11: {},
 };
